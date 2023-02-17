@@ -136,7 +136,6 @@ void FindElement(int[,] array)
             Console.WriteLine($"элемент = {array[i, j]}");
             search = true;
         }
-
 }
 
 int[] SummColumn(int[,] array)
@@ -147,7 +146,7 @@ int[] SummColumn(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            sum[j] += array[i,j];
+            sum[j] += array[i, j];
         }
     }
     return sum;

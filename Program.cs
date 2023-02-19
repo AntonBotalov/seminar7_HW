@@ -44,7 +44,7 @@ void Task_3()
     int[,] array = new int[Random(), Random()];
     FillArray(array);
     PrintIntArray(array);
-    int[] summ = SummColumn(array);
+    double[] summ = SummMiddleColumn(array);
     PrintArray(summ);
 }
 
@@ -138,9 +138,9 @@ void FindElement(int[,] array)
         }
 }
 
-int[] SummColumn(int[,] array)
+double[] SummMiddleColumn(int[,] array)
 {
-    int[] sum = new int[array.GetLength(1)];
+    double[] sum = new double[array.GetLength(1)];
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -149,13 +149,19 @@ int[] SummColumn(int[,] array)
             sum[j] += array[i, j];
         }
     }
+
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        sum[j] = Math.Round(sum[j] / array.GetLength(0), 1);
+    }
+
     return sum;
 }
 
-void PrintArray(int[] summ)
+void PrintArray(double[] summ)
 {
     Console.WriteLine("");
-    Console.Write($"summ =");
+    Console.Write($"Ср.Ар =");
 
     for (int j = 0; j < summ.Length; j++)
     {

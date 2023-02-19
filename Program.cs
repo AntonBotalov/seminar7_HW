@@ -36,7 +36,6 @@ void Task_2()
     FillArray(array);
     PrintIntArray(array);
     FindElement(array);
-
 }
 
 void Task_3()
